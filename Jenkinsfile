@@ -8,12 +8,12 @@ pipeline {
          }
        stage("build docker") {
         steps {
-          sh "sudo docker build -t flaskapp ."
+          sh "docker build -t flaskapp ."
           }
          }
        stage("running docker") {
         steps {
-          sh "sudo docker run -dit -p 5001:5001 --name flask flaskapp"
+          sh "docker run -dit -p 5001:5001 --name flask flaskapp"
           }
         }
        stage("testing") {
